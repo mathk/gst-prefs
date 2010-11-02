@@ -1,2 +1,6 @@
 <package>
-<package>
+  <name>Prefs</name>
+  <namespace>Prefs</namespace>
+  <filein>PrefSection.st</filein>
+  <file>PrefSection.st</file>
+</package>
