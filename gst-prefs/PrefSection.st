@@ -14,11 +14,12 @@ Object subclass: PrefSection [
     ]
 
     variables [
-	^variables ifNil: [variables := OrderedCollection new]
+	^variables ifNil: [variables := Dictionary new]
     ]
 
     sectionAt: name [
-	^subsections detect: [each | each name = name] ifNone: [SystemExceptions.NotFound signal: 'The section', name, ' is not found in ', self printString]
+	^subsections detect: [each | each name = name] 
+		     ifNone: [SystemExceptions.NotFound signal: 'The section', name, ' is not found in ', self printString]
     ]
 
     printOn: aStream [
@@ -30,6 +31,10 @@ Object subclass: PrefSection [
     ]
 
     variableAt: name [
+	^variables at: name
+    ]
+
+    variableAt: name put: value [
 	
     ]
 ]
